@@ -22,7 +22,6 @@
         }
 
         .fechar {
-            position: absolute;
             top: 0px;
             right: 3px;
             font-size: 35px;
@@ -68,7 +67,7 @@
         .med h1 {
             font-size: 28px;
             margin-bottom: 10px;
-            margin-left: 30px;
+            margin-left: 130px;
         }
 
         .iten01 {
@@ -82,11 +81,11 @@
         .iten01 .fi {
             font-size: 50px;
             margin-top: 25px;
+            margin-left: 120px;
         }
 
         .iten01 .frase {
             font-size: 30px;
-            margin-left: 20px;
         }
 
 
