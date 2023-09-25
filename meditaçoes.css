@@ -76,6 +76,8 @@
             border: 2px solid black;
             border-radius: 20px;
             background-color: white;
+            width: 365px;
+            margin-left: 13px;
         }
 
         .iten01 .fi {
