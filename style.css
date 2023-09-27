@@ -2,6 +2,7 @@ body{
     background-image: url(login/imagens/fundo.jpg);
     background-repeat: no-repeat;
     background-size: 650px 999px;
+    background-position: -100px 0px;
 }
 
 .space{
