@@ -1,7 +1,7 @@
 let musicas = [
-    {titulo:'Fogo e Gasolina', artista:'João Tinti', src:'musicas/05 - FOGO E GASOLINA.mp3', img:'../imagens/download.jpeg'},
-    {titulo:'Samba raiz', artista:'Bossa Nova Brasil', src:'musicas/07 - QUEM É O LOUCO ENTRE NÓS.mp3', img:'../imagens/imagem-relaxante-02.jpeg'},
-    {titulo:'Música piano', artista:'John Green', src:'musicas/A Brand New Start - TrackTribe (1).mp3', img:'../imagens/imagem-relaxante-03.jpeg'},
+    {titulo:'Dormir', artista:'', src:'../musicas/dormir.mp3', img:'../imagens/download.jpeg'},
+    {titulo:'Estudar', artista:'', src:'../musicas/estudar.mp3', img:'../imagens/imagem-relaxante-02.jpeg'},
+    {titulo:'Ansiedade', artista:'', src:'../musicas/ansiedade.mp3', img:'../imagens/imagem-relaxante-03.jpeg'},
 ];
 
 let musica = document.getElementById('audioPlayer');
