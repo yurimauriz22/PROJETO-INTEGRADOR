@@ -116,3 +116,33 @@
             margin-top: 65px;
             margin-left: -154px;
         }
+
+        @media screen and (min-width:767px) {
+            .exer{
+                width: 1356px;
+                margin-left: -7px;
+                display: flex;
+                background-position: 750px 10px;
+             }
+
+            .iten01{
+                height: 100px;
+                width: 300px;
+                margin-top: 70px;
+                max-width: 500px;
+            }
+
+            body{
+                padding: 0;
+                margin: 0;
+            }
+
+            .iten011{
+                margin-left: -120px;
+            }
+
+            .modal-content{
+                top: 100px;
+            }
+        
+        }

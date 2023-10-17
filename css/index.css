@@ -52,7 +52,7 @@ body{
 
 @media screen and (min-width:567px){
     body{
-        background: linear-gradient(100deg, #CDFFD8, #94B9FF);
+        background: linear-gradient(100deg, #94B9FF, #CDFFD8);
     }
 
     .btn{
@@ -85,10 +85,10 @@ body{
 
     .branco{
         background: white;
-        width: 340px;
-        height: 340px;
+        width: 380px;
+        height: 380px;
         margin-left: 65%;
-        margin-top: -370px;
+        margin-top: -410px;
         border-radius: 50%;
         background-image: url(../imagens/fundo.index-removebg-preview.png);
         background-repeat: no-repeat;
