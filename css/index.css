@@ -58,43 +58,51 @@ body{
     .btn{
         margin-left: 60px;
         width: 100px;
+        height: 45px;
+        font-size: 29px;
     }
 
     .space{
         margin-left: 50px;
+        font-size: 50px;
     }
 
     .bemvindo{
         margin-left: 100px;
+        font-size: 35px;
     }
 
     .alivio{
         margin-left: 50px;
+        font-size: 28px;
     }
 
     .momentos{
         margin-left: 100px;
+        font-size: 28px;
     }
 
     .branco{
         background: white;
-        width: 250px;
-        height: 250px;
+        width: 340px;
+        height: 340px;
         margin-left: 65%;
-        margin-top: -300px;
-        border-radius: 150px;
+        margin-top: -370px;
+        border-radius: 50%;
         background-image: url(../imagens/fundo.index-removebg-preview.png);
         background-repeat: no-repeat;
-        background-size: 200px 300px;
+        background-size: 290px 390px;
         background-position: -9px -3px;
     }
 
     .conta{
-        margin-left: 60px;
+        margin-left: 43px;
+        font-size: 29px;
     }
 
     .login{
         margin-right: 75%;
+        font-size: 20px;
     }
     
 
