@@ -103,3 +103,65 @@ body {
     
 }
 
+@media screen and (min-width:567px){
+    body{
+        background: linear-gradient(100deg, #CDFFD8, #94B9FF);
+    }
+
+    .imagem-fundo{
+        
+    }
+
+    .circulo{
+        background: white;
+        width: 380px;
+        height: 380px;
+        margin-left: 65%;
+        margin-top: -370px;
+        border-radius: 50%;
+        background-image: url(../imagens/fundo.index-removebg-preview.png);
+        background-repeat: no-repeat;
+        background-size: 290px 390px;
+        background-position: -9px -3px;
+    }
+
+    .criar button{
+        background: white;
+    }
+
+    .space{
+        margin-left: 70px;
+        text-align: left;
+        margin-top: 60px;
+    }
+
+    .conta{
+        text-align: left;
+        margin-left: 110px;
+        margin-top: 20px;
+    }
+
+    .nome{
+        margin-left: 30px;
+    }
+
+    .email{
+        margin-left: 45px;
+    }
+
+    .senha{
+        margin-left: 30px;
+    }
+
+    .sobre{
+        margin-left: -633px;
+    }
+    .meio{
+        margin-left: -275px;
+    }
+
+    .criar{
+        margin-left: 40px;
+    }
+}
+
