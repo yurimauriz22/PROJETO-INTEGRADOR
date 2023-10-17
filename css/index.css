@@ -38,8 +38,9 @@ body{
 }
 
 .login{
-    margin-right: 36%;
+    margin-right: 35%;
     font-family: Arial, Helvetica, sans-serif;
+
 }
 
 .conta {
@@ -49,43 +50,53 @@ body{
     font-family: Arial, Helvetica, sans-serif;
 }
 
-@media all and (min-width: 1000px) and (max-width: 1700px) {
-    .alivio{    
-        text-align: center;
-    }
-
-    .momentos{
-        text-align: center;
-    }
-
-    .space{
-        text-align: center;
-    }
-
-    .bemvindo{
-        text-align: center;
-    }
-
-    .container{
-        display: grid;
-        place-items: center;
-    }
-
-    .login{
-        margin-right: 0%;
-        width: 35%;
-    }
-
+@media screen and (min-width:567px){
     body{
-        background: white;
+        background: linear-gradient(100deg, #CDFFD8, #94B9FF);
     }
 
     .btn{
-        margin-left: 33%;
-        width: 90px;
+        margin-left: 60px;
+        width: 100px;
+    }
+
+    .space{
+        margin-left: 50px;
+    }
+
+    .bemvindo{
+        margin-left: 100px;
+    }
+
+    .alivio{
+        margin-left: 50px;
+    }
+
+    .momentos{
+        margin-left: 100px;
+    }
+
+    .branco{
+        background: white;
+        width: 250px;
+        height: 250px;
+        margin-left: 65%;
+        margin-top: -300px;
+        border-radius: 150px;
+        background-image: url(../imagens/fundo.index-removebg-preview.png);
+        background-repeat: no-repeat;
+        background-size: 200px 300px;
+        background-position: -9px -3px;
+    }
+
+    .conta{
+        margin-left: 60px;
+    }
+
+    .login{
+        margin-right: 75%;
     }
     
-    .conta{
-        margin-right: 4% ;
-    }
+
+
 }
