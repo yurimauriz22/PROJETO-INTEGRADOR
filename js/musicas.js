@@ -6,7 +6,6 @@ let musicas = [
 
 let musica = document.getElementById('audioPlayer');
 let indexMusica = 0;
-
 let duracaoMusica = document.querySelector('.fim');
 let imagem = document.querySelector('#musicImage');
 let nomeMusica = document.querySelector('.descricao h2');
