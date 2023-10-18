@@ -13,6 +13,17 @@ let nomeArtista = document.querySelector('.descricao i');
 let tempoDecorrido = document.querySelector('.inicio');
 
 // Eventos
+var elem = document.getElementById('myBar');
+var progress = document.getElementById('myProgress');
+elem.addEventListener('click', function (e) {
+    var x = e.pageX - this.offsetLeft, // or e.offsetX (less support, though)
+        y = e.pageY - this.offsetTop,  // or e.offsetY
+        clickedValue = x / this.offsetWidth*100;
+        progress.style.width = clickedValue + '%'; 
+        musica.currentTime = musica.duration/100 * clickedValue 
+});
+
+
 document.querySelector('.botao-play').addEventListener('click', tocarMusica);
 
 document.querySelector('.botao-pause').addEventListener('click', pausarMusica);
