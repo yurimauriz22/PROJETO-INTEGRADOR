@@ -1,14 +1,16 @@
 body{
-    background-image: url(../imagens/fundo.index.jpg);
-    background-repeat: no-repeat;
+    /* background-image: url(../imagens/fundo.index.jpg); */
+    /* background-repeat: no-repeat;
     background-size: 650px 999px;
-    background-position: -100px 0px;
+    background-position: -100px 0px; */
+    background: linear-gradient(180deg , #94B9FF, #CDFFD8);
+    height: 100vh;
 }
 
 .space{
     font-size: 40px;
     letter-spacing: 10px;
-    margin-top: 10px;
+    margin-top: 23px;
     margin-left: 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -38,16 +40,34 @@ body{
 }
 
 .login{
-    margin-right: 35%;
+    position: relative;
+    margin-right: 29%;
     font-family: Arial, Helvetica, sans-serif;
+    margin-top: 220px;
+    margin-left: 40px;
+}
 
+
+.branco{
+    background: white;
+    width: 250px;
+    height: 250px;
+    margin-left: 113px;
+    margin-top: -410px;
+    border-radius: 50%;
+    background-image: url(../imagens/fundo.index-removebg-preview.png);
+    background-repeat: no-repeat;
+    background-size: 290px 390px;
+    background-position: -9px -3px;
 }
 
 .conta {
-    font-size: 19px;
+    font-size: 25px;
     color: rgb(100, 100, 100);
     text-decoration: none;
     font-family: Arial, Helvetica, sans-serif;
+    margin-left: 35px;
+    
 }
 
 @media screen and (min-width:567px){
