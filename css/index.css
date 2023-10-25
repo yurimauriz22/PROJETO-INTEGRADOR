@@ -1,10 +1,6 @@
 body{
-    /* background-image: url(../imagens/fundo.index.jpg); */
-    /* background-repeat: no-repeat;
-    background-size: 650px 999px;
-    background-position: -100px 0px; */
     background: linear-gradient(180deg , #94B9FF, #CDFFD8);
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .space{
@@ -117,13 +113,15 @@ body{
     }
 
     .conta{
-        margin-left: 43px;
+        margin-left: 75px;
         font-size: 29px;
     }
 
     .login{
         margin-right: 75%;
         font-size: 20px;
+        margin-top: 0px;
+        
     }
     
     
