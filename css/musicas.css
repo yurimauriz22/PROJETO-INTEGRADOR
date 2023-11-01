@@ -112,6 +112,7 @@ progress {
             background-color: #fff;
             border-radius: 5px;
             top: 100px;
+            margin-top: -50px;
         }
          /* Botão de fechamento do modal */
     .close-button {
