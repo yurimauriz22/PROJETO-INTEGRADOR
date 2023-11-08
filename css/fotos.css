@@ -82,3 +82,39 @@
         cursor: pointer;
         color: white;
     }
+
+    @media screen and (min-width:767px){
+        img{
+            width: 250px;
+            height: 250px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            margin-left: 8px;
+        }
+        
+        section{
+            column-gap: 5px;
+            column-count: 3;
+            margin: 10px;
+        }
+        
+        .fotos {
+            width: 100%;
+            margin-left: -9px;
+        }
+
+        .cima{
+            background-size: 100% 300px;
+        }
+        .modal-content{
+            top: 50px;
+            margin-left: 20%;
+            height: 500px;
+        }
+
+        .close{
+            font-size: 50px;
+        }
+
+
+    }
