@@ -144,6 +144,10 @@
             .modal-content{
                 top: 100px;
             }
+
+            .cima{
+                background-size: 100% 450px;
+            }
         
         }
 
