@@ -1,92 +1,44 @@
-.fotos {
-    position: absolute;
-    top: 270px;
-    background-color: white;
-    width: 103%;
-    height: 100%;
-    border-radius: 40px 40px 0px 0px;
-    margin-left: -20px;
-    background-image: url(../imagens/Design_sem_nome__18_-removebg-preview.png);
-    background-repeat: no-repeat;
-}
+    .fotos {
+        position: absolute;
+        top: 270px;
+        background-color: white;
+        width: 103%;
+        height: 100%;
+        border-radius: 40px 40px 0px 0px;
+        margin-left: -20px;
+        background-image: url(../imagens/Design_sem_nome__18_-removebg-preview.png);
+        background-repeat: no-repeat;
+    }
 
-.fotos h1 {
-    font-size: 28px;
-    margin-bottom: 10px;
-    margin-left: 20px;
-}
+    .fotos h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+        margin-left: 20px;
+    }
 
-.cima {
-    width: 100%;
-    height: 300px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    background-image: url(https://img.elo7.com.br/product/main/337B547/scrapbook-preto-50-fls-31x29cm-amor.jpg);
-    background-repeat: no-repeat;
-    background-size: 100% 300px;
-}
-
-.volta {
-    top: 20px;
-    left: 20px;
-    position: absolute;
-    font-size: 25px;
-    color: white;
-    text-decoration: none;
-}
-  
-    img{
+    .cima {
         width: 100%;
         height: 100%;
-        border-radius: 6px;
-        margin-bottom: 10px;
-        margin-left: 8px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background-image: url(https://img.elo7.com.br/product/main/337B547/scrapbook-preto-50-fls-31x29cm-amor.jpg);
+        background-repeat: no-repeat;
+        background-size: 100% 300%;
+    }
+
+    .volta {
+        top: 20px;
+        left: 20px;
+        position: absolute;
+        font-size: 25px;
+        color: white;
+        text-decoration: none;
     }
     
-    section{
-        column-gap: 5px;
-        column-count: 2;
-        margin: 10px;
-    }
-
-    .modal {
-        display: none;
-        position: fixed;
-        z-index: 1;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-    }
-
-    .modal-content {
-        position: relative;
-        margin: auto;
-        padding: 20px;
-        width: 80%;
-        max-width: 800px;
-        background-color: #fff;
-        border-radius: 5px;
-        top: 100px;
-        margin-left: 20px;
-        height: 50%;
-    }
-
-    .close {
-        position: absolute;
-        top: 20px;
-        right: 30px;
-        font-size: 30px;
-        cursor: pointer;
-        color: white;
-    }
-
-    @media screen and (min-width:767px){
         img{
-            width: 250px;
-            height: 250px;
+            width: 100%;
+            height: 100%;
             border-radius: 6px;
             margin-bottom: 10px;
             margin-left: 8px;
@@ -94,29 +46,131 @@
         
         section{
             column-gap: 5px;
-            column-count: 3;
+            column-count: 2;
             margin: 10px;
         }
-        
-        .fotos {
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
             width: 100%;
-            margin-left: -9px;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
         }
 
-        .cima{
-            background-size: 100% 300px;
-        }
-        .modal-content{
-            top: 50px;
-            margin-left: 20%;
-            height: 500px;
+        .modal-content {
+            position: relative;
+            margin: auto;
+            padding: 20px;
+            width: 80%;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 5px;
+            top: 100px;
+            margin-left: 20px;
+            height: 50%;
         }
 
-        .close{
-            font-size: 50px;
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            cursor: pointer;
+            color: white;
         }
 
-        .cima{
-            background-size: 100% 450px;
+        input[type="file"]{
+            display: none;  
         }
+
+        label {
+            height: 70px;
+            width: 70px;
+            background: #333;
+            color: #fff;
+            text-transform: uppercase;
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+            font-size: 60px;
+            cursor: pointer;
+            transition: 0.5s;
+            border-radius: 50%;
+            position: fixed;
+            left: 90%; /* Centralizando horizontalmente */
+            transform: translateX(-50%); /* Centralizando horizontalmente */
+            bottom: 20px; /* Ajuste conforme necessário para a posição vertical desejada */
+            z-index: 2; /* Ou qualquer valor maior que o z-index dos outros elementos */
+        }
+        
+
+    
+
+        @media screen and (min-width:767px){
+            img{
+                width: 250px;
+                height: 250px;
+                border-radius: 6px;
+                margin-bottom: 10px;
+                margin-left: 8px;
+            }
+            
+            section{
+                column-gap: 5px;
+                column-count: 3;
+                margin: 10px;
+            }
+            
+            .fotos {
+                width: 100%;
+                margin-left: -9px;
+            }
+
+            .cima{
+                background-size: 100% 300px;
+            }
+            .modal-content{
+                top: 50px;
+                margin-left: 20%;
+                height: 500px;
+            }
+
+            .close{
+                font-size: 50px;
+            }
+
+            .cima{
+                background-size: 100% 450px;
+            }
+
+            label{
+                left: 97%;
+            }
+        }
+
+        /* Adicione as seguintes regras ao seu arquivo CSS */
+
+    .img-container {
+        position: relative;
+        display: inline-block; /* para que o span fique ao lado da imagem */
+    }
+
+    .close-button {
+        position: absolute;
+        top: 5px; /* ajuste conforme necessário para a posição vertical desejada */
+        right: 5px; /* ajuste conforme necessário para a posição horizontal desejada */
+        font-size: 24px; /* ajuste conforme necessário para o tamanho desejado do ícone 'x' */
+        cursor: pointer;
+        color: white; /* ajuste conforme necessário para a cor desejada */
+        background-color: red; /* ajuste conforme necessário para a cor de fundo desejada */
+        border-radius: 50%;
+        padding: 5px;
+    }
+
+    .close-button:hover {
+        background-color: darkred; /* ajuste conforme necessário para a cor de fundo desejada ao passar o mouse */
     }
