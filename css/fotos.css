@@ -18,13 +18,13 @@
 
     .cima {
         width: 100%;
-        height: 100%;
+        height: 300px;
         position: absolute;
         top: 0;
         right: 0;
         background-image: url(https://img.elo7.com.br/product/main/337B547/scrapbook-preto-50-fls-31x29cm-amor.jpg);
         background-repeat: no-repeat;
-        background-size: 100% 300%;
+        background-size: 100% 300px;
     }
 
     .volta {
