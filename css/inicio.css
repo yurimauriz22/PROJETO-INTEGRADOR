@@ -151,7 +151,7 @@ body{
     .fot{
         margin-top: 0px;
     }
-
+    
     .dia{
         border-bottom:solid 1.6px ;
         width: 37%;
@@ -180,6 +180,56 @@ body{
     .img-1, .img-2, .img-3,.img-4,.med,.ex,.son,.fot{
         width: 190px;
         height: 190px;
+        margin-left: 0px;
+        margin-top: 30px;
+        
+    }
+
+}
+@media screen and (min-width:1000px) {
+    .grid{
+        display: grid;
+        grid-template-areas: 
+        "med  ex son fot";
+        margin-top: 50px;
+    }
+    
+    .son{
+        margin-top: 0px;
+        }
+
+    .fot{
+        margin-top: 0px;
+    }
+
+    .dia{
+        border-bottom:solid 1.6px ;
+        width: 37%;
+    }
+
+    .bom{
+        font-size: 30px;
+        margin-top: 35px;
+    }
+
+    .user{
+        margin-top: -45px;
+    }
+
+    .img-user{
+        width: 170px;
+        height: 170px;
+        margin-top: -50px;
+    }
+
+    body{
+        background-position: 330px 50px;
+        background-size: 80%;
+    }
+
+    .img-1, .img-2, .img-3,.img-4,.med,.ex,.son,.fot{
+        width: 210px;
+        height: 210px;
         margin-left: 0px;
         margin-top: 30px;
         
