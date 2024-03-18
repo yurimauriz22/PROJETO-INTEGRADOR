@@ -66,6 +66,11 @@ body{
     
 }
 
+.input{
+    margin-left: 40px;
+    margin-top: 160px;
+}
+
 @media screen and (min-width:567px){
     body{
         background: linear-gradient(100deg, #94B9FF, #CDFFD8);
@@ -123,6 +128,12 @@ body{
         margin-top: 0px;
         
     }
+
+    .input{
+        margin-left: 65px;
+        margin-top: 30px;
+    }
     
     
 }
+
