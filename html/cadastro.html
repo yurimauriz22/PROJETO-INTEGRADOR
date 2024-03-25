@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
     <link rel="stylesheet" href="../css/cadastro.css">
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
 </head>
 <body>
     <h1 class="space">SPACE CALM</h1>
@@ -24,20 +27,20 @@
             </fieldset>
 </div>
     <fieldset class="email">
-        <input type="email" placeholder="Email" class="email2">
+        <input type="email" placeholder="Email" class="email2" id="email">
     </fieldset>
     
     <fieldset class="senha">
-        <input type="password" placeholder="Senha" class="senha2">
+        <input type="password" placeholder="Senha" class="senha2" id="senha">
     </fieldset>
         </fieldset>
     
  
     </form>
-    <a href="../index.html" class="criar"><button>Criar Conta</button></a>
+    <button id="submit-btn" class="criar" onclick="signUp()">Criar Conta</button>
     
     <div class="imagem-fundo"></div>
     <div class="circulo"></div>
-   
+   <script src="../login.js"></script>
 </body>
 </html>

@@ -5,7 +5,7 @@ document.getElementById("enviar").addEventListener("click", function () {
     if (email !== "" && senha !== "") {
         if (email.includes("@") && email.includes(".")) {
             // Email válido, redirecionar para a página de início
-            window.location.href = "inicio.html";
+           // window.location.href = "inicio.html";
         } else {
             alert("Por favor, insira um email válido.");
         }
