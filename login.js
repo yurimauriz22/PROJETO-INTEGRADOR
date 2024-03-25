@@ -46,7 +46,7 @@ const signIn = () => {
   })
   .catch((error) => {
     console.log(error.code);
-      console.log(error.message);
-      alert("usuario não encontrado ou senha errada")
+    console.log(error.message);
+    alert("usuario não encontrado ou senha errada");
   });
 }
