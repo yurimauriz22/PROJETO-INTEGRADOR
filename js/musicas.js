@@ -15,14 +15,32 @@ let tempoDecorrido = document.querySelector('.inicio');
 // Eventos
 var elem = document.getElementById('myBar');
 var progress = document.getElementById('myProgress');
-elem.addEventListener('click', function (e) {
-    var x = e.pageX - this.offsetLeft, // or e.offsetX (less support, though)
-        y = e.pageY - this.offsetTop,  // or e.offsetY
-        clickedValue = x / this.offsetWidth*100;
-        progress.style.width = clickedValue + '%'; 
-        musica.currentTime = musica.duration/100 * clickedValue 
-});
+var isMobile = false;
 
+// Verifica se é um dispositivo móvel
+if (/Mobi/.test(navigator.userAgent)) {
+    isMobile = true;
+}
+
+// Adiciona os eventos de clique ou toque dependendo do dispositivo
+if (isMobile) {
+    elem.addEventListener('touchstart', function (e) {
+        var x = e.touches[0].pageX - this.getBoundingClientRect().left;
+        adjustProgress(x);
+    });
+} 
+else {
+    elem.addEventListener('click', function (e) {
+        var x = e.pageX - this.getBoundingClientRect().left;
+        adjustProgress(x);
+    });
+}
+
+function adjustProgress(x) {
+    var clickedValue = (x / elem.offsetWidth) * 100;
+    progress.style.width = clickedValue + '%';
+    musica.currentTime = (musica.duration / 100) * clickedValue;
+}
 
 document.querySelector('.botao-play').addEventListener('click', tocarMusica);
 
