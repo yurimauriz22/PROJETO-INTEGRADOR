@@ -121,6 +121,7 @@
         @media screen and (min-width:767px) {
             .med{
                 width: 1373px;
+                top: 370px;
                 margin-left: -7px;
                 display: flex;
                 background-position: 750px 10px;

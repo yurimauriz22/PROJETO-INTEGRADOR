@@ -238,3 +238,16 @@ progress {
             background-size: 100% 450px;
         }
         }
+
+        @media screen and (min-width:900px){
+        .imagens {
+        width: 210px;
+        height: 210px;
+        border-radius: 20px;
+        }
+        .sons{
+            top: 340px;
+            background-position: 850px 20px;
+           }
+
+    }
