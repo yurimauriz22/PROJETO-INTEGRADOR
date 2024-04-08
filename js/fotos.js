@@ -1,64 +1,40 @@
-function deleteImage(index) {
-    const key = `imagem${index}`;
-    localStorage.removeItem(key);
-    updateGallery();
+const firebaseConfig = {
+    apiKey: "AIzaSyB_A7ce7rxbD6QR1k8MtxxmiERBGb3bQz0",
+    authDomain: "space-calm.firebaseapp.com",
+    projectId: "space-calm",
+    storageBucket: "space-calm.appspot.com",
+    messagingSenderId: "236518444248",
+    appId: "1:236518444248:web:51847e2f757d9a8c489bad",
+    measurementId: "G-ND4YSRH202"
+};
+firebase.initializeApp(firebaseConfig);
+
+// Verifica se há uma URL de imagem armazenada no localStorage
+const storedImageUrl = localStorage.getItem('uploadedImageUrl');
+if (storedImageUrl) {
+    document.getElementById('uploadedImage').src = storedImageUrl;
 }
 
-function updateGallery() {
-    const gallery = document.getElementById('imageGallery');
-    gallery.innerHTML = '';
+function uploadImages() {
+    const files = document.querySelector("#imageInput").files;
+    const ref = firebase.storage().ref();
 
-    // Criar um array de chaves ordenadas
-    const keys = Object.keys(localStorage).filter(key => key.startsWith('imagem')).sort();
-
-    for (let i = 0; i < keys.length; i++) {
-        const key = keys[i];
-        const imgContainer = document.createElement('div');
-        imgContainer.classList.add('img-container');
-
-        const img = document.createElement('img');
-        img.src = localStorage.getItem(key);
-        img.alt = `Imagem ${i + 1}`;
-
-        const deleteButton = document.createElement('span');
-        deleteButton.classList.add('close-button');
-        deleteButton.innerHTML = '&times;';
-        deleteButton.onclick = function () {
-            deleteImage(parseInt(key.replace('imagem', '')));
+    for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const name = +new Date() + "-" + file.name;
+        const metadata = {
+            contentType: file.type
         };
-
-        // Adicione um evento de clique para abrir o modal
-        img.onclick = function () {
-            openModal(img.src);
-        };
-
-        imgContainer.appendChild(deleteButton);
-        imgContainer.appendChild(img);
-        gallery.appendChild(imgContainer);
-    }
-}
-
-// Chame a função updateGallery apenas após a lógica acima ser definida
-window.addEventListener('DOMContentLoaded', updateGallery);
-
-document.getElementById('imageInput').addEventListener('change', handleImageChange);
-
-function handleImageChange() {
-    const input = document.getElementById('imageInput');
-    const gallery = document.getElementById('imageGallery');
-
-    if (input.files && input.files.length > 0) {
-        for (let i = 0; i < input.files.length; i++) {
-            const reader = new FileReader();
-
-            reader.onload = function (e) {
-                const imageDataURL = e.target.result;
-                localStorage.setItem(`imagem${localStorage.length}`, imageDataURL);
-                updateGallery();
-            };
-
-            reader.readAsDataURL(input.files[i]);
-        }
+        const task = ref.child(name).put(file, metadata);
+        task.then(snapshot => snapshot.ref.getDownloadURL())
+            .then(url => {
+                console.log(url);
+                alert('image uploaded successfully');
+                document.getElementById("uploadedImage").src = url;
+                // Armazena a URL da imagem no localStorage
+                localStorage.setItem('uploadedImageUrl', url);
+            })
+            .catch(console.error);
     }
 }
 
