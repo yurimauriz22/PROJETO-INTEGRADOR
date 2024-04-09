@@ -30,7 +30,7 @@ body{
 .momentos{
     font-size: 18px;
     margin-top: -40px;
-    letter-spacing: 2px;
+    letter-spacing: 6px;
     margin-left: 15px;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -51,9 +51,9 @@ body{
     margin-left: 113px;
     margin-top: -410px;
     border-radius: 50%;
-    background-image: url(../imagens/fundo.index-removebg-preview.png);
+    background-image: url(https://media.istockphoto.com/id/1388644810/pt/foto/happy-caucasian-young-man-using-smart-phone-cellphone-for-calls-social-media-mobile.jpg?b=1&s=612x612&w=0&k=20&c=bvSv-Eh3GmPym0Yvzt-1KRAJ9_7wMQgcpMOsPnb-0Co=);
     background-repeat: no-repeat;
-    background-size: 290px 390px;
+    background-size: 330px 320px;
     background-position: -53px -3px;
 }
 
@@ -111,9 +111,9 @@ body{
         margin-left: 65%;
         margin-top: -410px;
         border-radius: 50%;
-        background-image: url(../imagens/fundo.index-removebg-preview.png);
+        background-image: url(https://media.istockphoto.com/id/1388644810/pt/foto/happy-caucasian-young-man-using-smart-phone-cellphone-for-calls-social-media-mobile.jpg?b=1&s=612x612&w=0&k=20&c=bvSv-Eh3GmPym0Yvzt-1KRAJ9_7wMQgcpMOsPnb-0Co=);
         background-repeat: no-repeat;
-        background-size: 290px 390px;
+        background-size: 400px 380px;
         background-position: -9px -3px;
     }
 
@@ -132,7 +132,16 @@ body{
     .input{
         margin-left: 65px;
         margin-top: 30px;
+    }   
+
+    .google-button:hover {
+        background-color: #acc8fb;
+        transition: 0.5s;
+        opacity: 1;
+        
     }
+
+
     
     
 }

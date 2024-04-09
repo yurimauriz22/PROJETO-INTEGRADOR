@@ -15,7 +15,8 @@
     <div class="fotos">
         <h1>PICTURES</h1>
         <img id="uploadedImage" src="" alt="Uploaded Image" onclick="openModal(this.src)">
-        <label for="imageInput">&#43;</label>
+        <div id="gallery"></div> <!-- Aqui é onde as imagens serão exibidas -->
+        <label for="imageInput" onclick="openModal()">&#43;</label>
         <input type="file" id="imageInput" accept="image/*" multiple class="botao" name="imageInput" onchange="uploadImages()">
     </div>
 
@@ -24,8 +25,9 @@
         <img class="modal-content" id="modalImage">
     </div>
 
+
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.7.0/firebase-storage.js"></script>
-    <script src="../js/fotos.js"></script>
+    <script src="../js/fotos.js"></script> <!-- Seu script JavaScript -->
 </body>
 </html>
