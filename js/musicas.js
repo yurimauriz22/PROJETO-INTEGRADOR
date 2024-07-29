@@ -3,6 +3,7 @@ let musicas = [
     {titulo:'Estudar', artista:'', src:'../musicas/estudar.mp3', img:'../imagens/imagem-relaxante-02.jpeg'},
     {titulo:'Ansiedade', artista:'', src:'../musicas/ansiedade.mp3', img:'../imagens/imagem-relaxante-03.jpeg'},
     {titulo:'Paz', artista:'', src:'../musicas/PAZ.mp3', img:'../imagens/lugar-calmo-otimo-pra.jpg'},
+    {titulo:'Leveza', artista:'', src:'../musicas/Leveza dos sons.mp3', img:'../imagens/pirenopolis-cachoeira-abade.jpg'},
 ];
 
 let musica = document.getElementById('audioPlayer');
