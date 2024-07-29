@@ -2,6 +2,7 @@ let musicas = [
     {titulo:'Dormir', artista:'', src:'../musicas/dormir.mp3', img:'../imagens/download.jpeg'},
     {titulo:'Estudar', artista:'', src:'../musicas/estudar.mp3', img:'../imagens/imagem-relaxante-02.jpeg'},
     {titulo:'Ansiedade', artista:'', src:'../musicas/ansiedade.mp3', img:'../imagens/imagem-relaxante-03.jpeg'},
+    {titulo:'Paz', artista:'', src:'../musicas/PAZ.mp3', img:'../imagens/lugar-calmo-otimo-pra.jpg'},
 ];
 
 let musica = document.getElementById('audioPlayer');
