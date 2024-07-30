@@ -86,36 +86,60 @@
             
         }
 
-        .iten01 .frase {
-            font-size: 30px;
-            margin-left: 10px;
+        .iten01 .frase{
+            font-size: 25px;
+            margin-left: 5px;
+            margin-top: 30px;
+        }
+
+        .iten01 .frase2{
+            font-size: 25px;
+            margin-top: 30px;
+            margin-left: 5px;
+        }
+
+        .iten01 .frase3{
+            font-size: 25px;
+            margin-top: 30px;
+            margin-left: 5px;
+        }
+        .iten01 .frase4{
+            font-size: 25px;
+            margin-top: 30px;
+            margin-left: 5px;
         }
 
 
 
         .iten01 .num1 {
             font-size: 19px;
-            margin-top: 65px;
-            margin-left: -240px;
+            margin-top: 60px;
+            margin-left: -195px;
         }
 
         .iten01 .num2 {
             font-size: 19px;
             margin-top: 65px;
-            margin-left: -240px;
+            margin-left: -200px;
         }
 
         .iten01 .num3 {
             font-size: 19px;
             margin-top: 65px;
-            margin-left: -175px;
+            margin-left: -150px;
         }
 
         .iten01 .num4 {
             font-size: 19px;
             margin-top: 65px;
-            margin-left: -240px;
+            margin-left: -200px;
         }
+        .iten01 .num5 {
+            font-size: 19px;
+            margin-top: 65px;
+            margin-left: -180px;
+        }
+
 
         
         @media screen and (min-width:767px) {

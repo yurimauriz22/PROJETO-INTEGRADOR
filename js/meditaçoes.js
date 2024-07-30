@@ -18,7 +18,7 @@ var videos = {
     video2: "https://www.youtube.com/embed/vJfwuCB5C8o?si=AyC-GuqPtKQ4CXyH", // Substitua pelo link do segundo vídeo
     video3: "https://www.youtube.com/embed/rVTqBPop4LA?si=GW2S4FxrzvRuFHKF", // Substitua pelo link do terceiro vídeo
     video4: "https://www.youtube.com/embed/ioZaofmFkjM?si=V4dhLg4fHJ8yBlTI",
-    video5: "https://youtu.be/xTlIkRAbK08?si=Rj3TSIhJh_neu2C7", //video adicionado por marquinhos
+    video5: "https://www.youtube.com/embed/xTlIkRAbK08?si=KFKZulBXuDXvtG2i", //video adicionado por marquinhos
 };
 
 // Função para abrir um vídeo com base no botão clicado
