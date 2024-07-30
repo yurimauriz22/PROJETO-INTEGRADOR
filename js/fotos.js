@@ -93,3 +93,13 @@ onAuthStateChanged(auth, (user) => {
         // Redirecionar para a página de login ou exibir uma mensagem
     }
 });
+
+window.addEventListener('load', function() {
+    // Exibir a barra de progresso
+    document.getElementById('progress-container').classList.remove('hidden');
+
+    // Simulando o carregamento de todos os itens após 6 segundos (ajuste conforme necessário)
+    setTimeout(function() {
+        document.getElementById('progress-container').classList.add('hidden');
+    }, 6000);
+});
