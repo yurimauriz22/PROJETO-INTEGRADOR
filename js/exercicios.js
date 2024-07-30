@@ -3,6 +3,7 @@ var abrirVideoBtn1 = document.getElementById("abrirVideo1");
 var abrirVideoBtn2 = document.getElementById("abrirVideo2");
 var abrirVideoBtn3 = document.getElementById("abrirVideo3");
 var abrirVideoBtn4 = document.getElementById("abrirVideo4");
+var abrirVideoBtn5 = document.getElementById("abrirVideo5"); // adicionei essa função para o video5
 // Adicione mais botões conforme necessário
 var modal = document.getElementById("modal");
 var fecharModalBtn = document.getElementById("fecharModal");
@@ -17,6 +18,7 @@ var videos = {
     video2: "https://www.youtube.com/embed/-tgXKJ-S7ss?si=3Qs-Zb2od-5Admeq", // Substitua pelo link do segundo vídeo
     video3: "https://www.youtube.com/embed/wOXmWcIm_QI?si=cbl7oods-FnqHhqu", // Substitua pelo link do terceiro vídeo
     video4: "https://www.youtube.com/embed/_iQfblkbUJ4?si=-leHel3Gy8G1fi2a",
+    video5: "https://www.youtube.com/embed/VaIvW6BcV_Y?si=H7r-J0KewXThzJts", // Adicionei mais esse link para o quinto vídeo
 };
 
 // Função para abrir um vídeo com base no botão clicado
@@ -51,6 +53,12 @@ abrirVideoBtn4.addEventListener("click", function() {
     abrirVideo(abrirVideoBtn4);
 
 });
+
+abrirVideoBtn5.addEventListener("click", function() {
+    abrirVideo(abrirVideoBtn5);
+
+}); // Adicionei mais essa função para o quinto vídeo
+
 
 // Adicione mais ouvintes de evento para mais botões, se necessário
 
