@@ -22,7 +22,7 @@ var videos = {
     video4: "https://www.youtube.com/embed/ioZaofmFkjM?si=V4dhLg4fHJ8yBlTI",
     video5: "https://www.youtube.com/embed/xTlIkRAbK08?si=KFKZulBXuDXvtG2i", //video adicionado por marquinhos
     video6: "https://www.youtube.com/embed/pv-aymg97JM?si=rCJ8KjT5qgS0oDsv", //video adicionado por marquinhos
-    video7: "https://www.youtube.com/embed/CE6kq_8YlIk?si=75Zc7t9o0w72vw9D", //video adicionado por marquinhos
+    // video7: "https://www.youtube.com/embed/CE6kq_8YlIk?si=75Zc7t9o0w72vw9D", //video adicionado por marquinhos
 
 };
 

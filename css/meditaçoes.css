@@ -87,15 +87,15 @@
         }
 
         .iten01 .frase{
-            font-size: 25px;
-            margin-left: 10px;
-            margin-top: -30px;
+            font-size: 20px;
+            margin-left: 45px;
+            margin-top: -45px;
         }
 
         .iten01 .frase2{
-            font-size: 25px;
-            margin-top: 30px;
-            margin-left: 5px;
+            font-size: 20px;
+            margin-top: -40px;
+            margin-left: 40px;
         }
 
         .iten01 .frase3{
@@ -104,23 +104,30 @@
             margin-left: 5px;
         }
         .iten01 .frase4{
-            font-size: 25px;
-            margin-top: 30px;
-            margin-left: 5px;
+            font-size: 20px;
+            margin-top: -40px;
+            margin-left: 40px;
         }
-
-
-
+        .iten01 .frase5{
+            font-size: 20px;
+            margin-top: -40px;
+            margin-left: 40px;
+        }
+        .iten01 .frase6{
+            font-size: 22px;
+            margin-top: 30px;
+            margin-left: 10px;
+        }
         .iten01 .num1 {
-            font-size: 19px;
-            margin-top: 60px;
-            margin-left: -195px;
+            font-size: 15px;
+            margin-top: -20px;
+            margin-left: -160px;
         }
 
         .iten01 .num2 {
-            font-size: 19px;
-            margin-top: 65px;
-            margin-left: -200px;
+            font-size: 15px;
+            margin-top: -10px;
+            margin-left: -160px;
         }
 
         .iten01 .num3 {
@@ -130,15 +137,21 @@
         }
 
         .iten01 .num4 {
-            font-size: 19px;
-            margin-top: 65px;
-            margin-left: -200px;
+            font-size: 16px;
+            margin-top: -10px;
+            margin-left: -170px;
         }
         .iten01 .num5 {
-            font-size: 19px;
-            margin-top: 65px;
-            margin-left: -180px;
+            font-size: 16px;
+            margin-top: -15px;
+            margin-left: -150px;
         }
+        .iten01 .num6 {
+            font-size: 16px;
+            margin-top: 60px;
+            margin-left: -50px;
+        }
+        
 
 
         
@@ -174,5 +187,6 @@
             .cima{
                 background-size: 100% 450px;
             }
+           
         
         }
