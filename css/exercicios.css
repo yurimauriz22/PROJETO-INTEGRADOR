@@ -92,6 +92,11 @@
             margin-left: 10px;
         }
 
+        .iten01 .frase2{
+            font-size: 30px;
+            margin-left: 10px;
+        }
+
 
 
         .iten01 .num1 {
@@ -120,19 +125,19 @@
         
         .iten01 .num5 {
             font-size: 19px;
-            margin-top: -30px;
-            margin-left: 42px;
+            margin-top: 70px;
+            margin-left: -175px;
         }
 
         .iten01 .num6{
             font-size: 19px;
-            margin-top: -30px;
-            margin-left: 42px;
+            margin-top: 70px;
+            margin-left: -158px;
         }
 
         @media screen and (min-width:767px) {
             .exer{
-                width: 1526px;
+                width: 1430px;
                 top: 370px;
                 margin-left: -7px;
                 display: flex;
@@ -162,6 +167,11 @@
 
             .cima{
                 background-size: 100% 450px;
+            }
+            .iten01 .frase2 {
+                font-size: 30px;
+                margin-left: 0px;
+                margin-top: 30px;
             }
         
         }
