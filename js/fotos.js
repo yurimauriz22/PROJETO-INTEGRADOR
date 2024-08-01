@@ -108,6 +108,8 @@ function closeModal() {
     }
 }
 
+
+
 // Certifique-se de que o evento de clique no botão de fechar está funcionando
 document.querySelector(".close").addEventListener("click", closeModal);
 
