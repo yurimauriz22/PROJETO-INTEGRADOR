@@ -37,11 +37,11 @@
     }
     
         img{
-            width: 100%;
+            width: 80%;
             height: 100%;
             border-radius: 6px;
             margin-bottom: 10px;
-            margin-left: 8px;
+            margin-left: 50px;
         }
         
         section{
@@ -182,49 +182,34 @@
     }
 
 
-    /* Centraliza a barra de carregamento */
-.progress-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Ajuste conforme necessário */
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo preto fraco */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 9999;
-}
+    .c-loader {
+        animation: is-rotating 1s infinite;
+        border: 6px solid #e5e5e5;
+        border-radius: 50%;
+        border-top-color: #51d4db;
+        height: 120px;
+        width: 120px;
+    }
+    
+    .loading-screen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Fundo preto fraco */
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-.progress {
-    width: 80px; /* Ajuste o tamanho do círculo conforme necessário */
-    height: 80px; /* Ajuste o tamanho do círculo conforme necessário */
-    background-color: #777;
-    position: relative;
-    border-radius: 50%; /* Faz com que o contêiner seja um círculo */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.progress .progress-bar {
-    width: 60px; /* Ajuste o tamanho da barra interna conforme necessário */
-    height: 60px; /* Ajuste o tamanho da barra interna conforme necessário */
-    border-radius: 50%; /* Faz com que a barra de progresso também seja um círculo */
-    background-color: #add555;
-    position: absolute;
-    animation: progress-animation 6s infinite;
-    clip: rect(0, 60px, 60px, 30px); /* Clip para mostrar o progresso em forma de círculo */
-    transform: rotate(0deg);
-    transform-origin: center;
-}
-
-@keyframes progress-animation {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-}
-
-/* Classe para ocultar a barra de carregamento */
-.hidden {
-    display: none;
+  @keyframes is-rotating {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+  
+  .hidden {
+    display: none;   
 }

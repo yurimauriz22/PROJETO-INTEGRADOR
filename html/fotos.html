@@ -14,8 +14,7 @@
 
     <div class="fotos">
         <h1>PICTURES</h1>
-        <img id="uploadedImage" src="" alt="Uploaded Image" onclick="openModal(this.src)">
-        <div id="gallery"></div> <!-- Aqui é onde as imagens serão exibidas -->
+        <div id="gallery" onclick="openModal()"></div> <!-- Aqui é onde as imagens serão exibidas -->
         <label for="imageInput" onclick="openModal()">&#43;</label>
         <input type="file" id="imageInput" accept="image/*" multiple class="botao" name="imageInput" onchange="uploadImages()">
     </div>
@@ -24,13 +23,11 @@
         <span class="close" onclick="closeModal()">&times;</span>
         <img class="modal-content" id="modalImage">
     </div>
-    <div class="progress-container hidden" id="progress-container">
-        <div class="progress">
-            <div class="progress-bar"></div>
-        </div>
+    <div id="loadingScreen" class="loading-screen hidden">
+        <div class="c-loader" id="loadingScreen"></div>
     </div>
     
-
+    
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js"></script>

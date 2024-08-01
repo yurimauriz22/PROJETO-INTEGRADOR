@@ -45,7 +45,7 @@ function uploadImages(uid) {
                 url: url
             });
         }).then(() => {
-            console.log('URL da imagem salva no Realtime Database.');
+            alert('URL da imagem salva no Realtime Database.');
         }).catch((error) => {
             console.error('Erro ao fazer upload do arquivo:', error);
         });
@@ -67,7 +67,7 @@ function displayImagesInGallery(uid) {
             let imageCount = 0; // Contador para controlar o número de imagens exibidas
 
             for (const key in imageData) {
-                if (imageCount < 6) { // Limita o número de imagens exibidas a 6
+                if (imageCount < 8) { // Limita o número de imagens exibidas a 6
                     const img = document.createElement('img');
                     img.src = imageData[key].url;
                     gallery.appendChild(img);
@@ -81,6 +81,43 @@ function displayImagesInGallery(uid) {
         console.error('Erro ao recuperar imagens:', error);
     });
 }
+
+// Função para abrir o modal
+function openModal(src) {
+    const modal = document.getElementById("myModal");
+    const modalImage = document.getElementById("modalImage");
+    
+    if (src) {
+        modalImage.src = src; // Define a imagem no modal
+    } else {
+        const images = document.querySelectorAll("#gallery img");
+        if (images.length > 0) {
+            modalImage.src = images[0].src; // Abre a primeira imagem da galeria se nenhuma fonte for passada
+        }
+    }
+    
+    modal.style.display = "block";
+}
+
+// Função para fechar o modal
+// Função para fechar o modal
+function closeModal() {
+    const modal = document.getElementById("myModal");
+    if (modal) {
+        modal.style.display = "none";
+    }
+}
+
+// Certifique-se de que o evento de clique no botão de fechar está funcionando
+document.querySelector(".close").addEventListener("click", closeModal);
+
+
+// Adiciona um evento de clique nas imagens da galeria para abrir o modal com a imagem correspondente
+document.getElementById("gallery").addEventListener("click", function(event) {
+    if (event.target.tagName === "IMG") {
+        openModal(event.target.src);
+    }
+});
 
 // Verificar se o usuário está autenticado
 onAuthStateChanged(auth, (user) => {
@@ -96,10 +133,11 @@ onAuthStateChanged(auth, (user) => {
 
 window.addEventListener('load', function() {
     // Exibir a barra de progresso
-    document.getElementById('progress-container').classList.remove('hidden');
+    document.getElementById('loadingScreen').classList.remove('hidden');
 
     // Simulando o carregamento de todos os itens após 6 segundos (ajuste conforme necessário)
     setTimeout(function() {
-        document.getElementById('progress-container').classList.add('hidden');
+        document.getElementById('loadingScreen').classList.add('hidden');
     }, 6000);
 });
+
