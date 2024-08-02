@@ -67,7 +67,7 @@ function displayImagesInGallery(uid) {
             let imageCount = 0; // Contador para controlar o número de imagens exibidas
 
             for (const key in imageData) {
-                if (imageCount < 8) { // Limita o número de imagens exibidas a 6
+                if (imageCount < 10) { // Limita o número de imagens exibidas a 6
                     const img = document.createElement('img');
                     img.src = imageData[key].url;
                     gallery.appendChild(img);
