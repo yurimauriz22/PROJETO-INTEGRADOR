@@ -1,8 +1,8 @@
 // Importação das funções necessárias do Firebase
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
 import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js";
-import { getStorage, ref as storageRef, uploadBytes, getDownloadURL } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js";
-import { getDatabase, ref as dbRef, set, get, child } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+import { child, ref as dbRef, get, getDatabase, remove, set } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js";
+import { deleteObject, getDownloadURL, getStorage, ref as storageRef, uploadBytes } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-storage.js";
 
 // Configuração do Firebase
 const firebaseConfig = {
@@ -67,7 +67,7 @@ function displayImagesInGallery(uid) {
             let imageCount = 0; // Contador para controlar o número de imagens exibidas
 
             for (const key in imageData) {
-                if (imageCount < 10) { // Limita o número de imagens exibidas a 6
+                if (imageCount < 10) { // Limita o número de imagens exibidas a 10
                     const img = document.createElement('img');
                     img.src = imageData[key].url;
                     gallery.appendChild(img);
@@ -100,7 +100,6 @@ function openModal(src) {
 }
 
 // Função para fechar o modal
-// Função para fechar o modal
 function closeModal() {
     const modal = document.getElementById("myModal");
     if (modal) {
@@ -108,11 +107,60 @@ function closeModal() {
     }
 }
 
+// Função para extrair o nome do arquivo da URL
+function getFileNameFromURL(url) {
+    // Remove o prefixo da URL e decodifica o nome do arquivo
+    const fileName = decodeURIComponent(url.split('/').pop().split('?')[0]);
+    return fileName;
+}
 
+// Função para deletar imagem
+function deleteImage() {
+    console.log("Iniciando processo de deletar imagem");
+    const modalImage = document.getElementById("modalImage");
+    const imageURL = modalImage.src;
+    console.log("URL da imagem:", imageURL);
+
+    const user = auth.currentUser;
+    if (user) {
+        const uid = user.uid;
+        console.log("UID do usuário:", uid);
+
+        // Extrai o nome do arquivo da URL
+        const fileName = getFileNameFromURL(imageURL);
+        console.log("Nome do arquivo:", fileName);
+
+        // Referência ao arquivo no Realtime Database
+        const imageRef = dbRef(database, `images/${fileName}`);
+        console.log("Referência do arquivo no Realtime Database:", imageRef.toString());
+
+        // Verificar se o item existe antes de tentar removê-lo
+        get(imageRef).then((snapshot) => {
+            if (snapshot.exists()) {
+                console.log('Item encontrado, removendo...');
+
+                // Deletar o objeto do Realtime Database
+                return remove(imageRef).then(() => {
+                    console.log('Imagem removida do Realtime Database.');
+                    // Atualiza a galeria após a remoção
+                    displayImagesInGallery(uid);
+
+                    // Fecha o modal
+                    closeModal();
+                });
+            } else {
+                console.log('Item não encontrado no Realtime Database.');
+            }
+        }).catch((error) => {
+            console.error('Erro ao verificar o item no Realtime Database:', error);
+        });
+    } else {
+        console.log("Usuário não autenticado");
+    }
+}
 
 // Certifique-se de que o evento de clique no botão de fechar está funcionando
 document.querySelector(".close").addEventListener("click", closeModal);
-
 
 // Adiciona um evento de clique nas imagens da galeria para abrir o modal com a imagem correspondente
 document.getElementById("gallery").addEventListener("click", function(event) {
@@ -120,6 +168,9 @@ document.getElementById("gallery").addEventListener("click", function(event) {
         openModal(event.target.src);
     }
 });
+
+// Adiciona o evento de clique ao botão de deletar imagem no modal
+document.getElementById("deleteButton").addEventListener("click", deleteImage);
 
 // Verificar se o usuário está autenticado
 onAuthStateChanged(auth, (user) => {
@@ -142,4 +193,3 @@ window.addEventListener('load', function() {
         document.getElementById('loadingScreen').classList.add('hidden');
     }, 6000);
 });
-

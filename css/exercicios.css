@@ -137,9 +137,9 @@
 
         @media screen and (min-width:767px) {
             .exer{
-                width: 1430px;
+                width: 100%;
                 top: 370px;
-                margin-left: -7px;
+                margin-left: 0px;
                 display: flex;
                 background-position: 750px 10px;
                 border-radius: 0%;
