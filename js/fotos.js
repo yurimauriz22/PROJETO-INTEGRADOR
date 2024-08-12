@@ -193,3 +193,15 @@ window.addEventListener('load', function() {
         document.getElementById('loadingScreen').classList.add('hidden');
     }, 6000);
 });
+
+function removeSuccess() {
+    document.querySelector('.button').classList.remove('success');
+  }
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.button').addEventListener('click', function() {
+      this.classList.add('success');
+      setTimeout(removeSuccess, 3000);
+    });
+  });
+  
