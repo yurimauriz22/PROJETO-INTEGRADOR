@@ -12,6 +12,7 @@ const auth = firebaseApp.auth();
 
 //função de inscrição
 const signUp = () => {
+    const name = document.getElementById("nome").value;
     const email = document.getElementById("email").value;
     const password = document.getElementById("senha").value;
     console.log(email, password)
@@ -21,6 +22,12 @@ const signUp = () => {
       // Signed in 
         alert("você está inscrito");
         console.log(result);
+
+        return db.collection('users').doc(result.user.uid).set({
+          name: name,
+          email: email
+      });
+      
        
       // ...
     })
