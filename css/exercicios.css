@@ -10,6 +10,15 @@
             background-color: rgba(0, 0, 0, 0.7);
         }
 
+        .botaovideos {
+            position:relative;
+            top: 600px;
+            width: 10%;
+            height: 30px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
         .modal-content {
             position: relative;
             margin: auto;
