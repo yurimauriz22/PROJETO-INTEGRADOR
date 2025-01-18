@@ -1,0 +1,45 @@
+.cima {
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-image: url(https://img.freepik.com/fotos-gratis/mulher-sorridente-de-tiro-medio-alongando-se_23-2148785545.jpg?w=740&t=st=1695758966~exp=1695759566~hmac=327bb08f8a0179dd239299bb98517cc9a727d223b4e345010f09e18c83806c06);
+    background-repeat: no-repeat;
+    background-size: 100% 400px;
+}
+
+.volta {
+    top: 20px;
+    left: 20px;
+    position: absolute;
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+}
+
+.exercicio {
+    position: absolute;
+    top: 270px;
+    background-color: white;
+    width: 100%;
+    height: 100%;
+    border-radius: 40px 40px 0px 0px;
+    margin-left: -20px;
+    background-image: url(../imagens/Design_sem_nome__18_-removebg-preview.png);
+    background-repeat: no-repeat;
+    margin-left: -8px;
+}
+
+#admin-button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#admin-button:hover {
+    background-color: #0056b3;
+}
