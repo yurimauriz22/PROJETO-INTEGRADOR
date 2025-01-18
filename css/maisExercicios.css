@@ -31,15 +31,30 @@
     margin-left: -8px;
 }
 
-#admin-button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
+#admin-button-container {
+    height: 70px;
+            width: 70px;
+            background: #333;
+            color: #fff;
+            text-transform: uppercase;
+            display: block;
+            margin-top: 10px;
+            text-align: center;
+            font-size: 60px;
+            cursor: pointer;
+            transition: 0.5s;
+            border-radius: 50%;
+            position: fixed;
+            left: 90%; /* Centralizando horizontalmente */
+            transform: translateX(-50%); /* Centralizando horizontalmente */
+            bottom: 20px; /* Ajuste conforme necessário para a posição vertical desejada */
+            z-index: 2; /* Ou qualquer valor maior que o z-index dos outros elementos */
 }
 
 #admin-button:hover {
     background-color: #0056b3;
+}
+
+.video-container button{
+    color: #0056b3;
 }

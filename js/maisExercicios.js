@@ -36,6 +36,8 @@ onAuthStateChanged(auth, async (user) => {
                 if (userData && userData.isAdmin) {
                     // Exibe o botão de admin se for um administrador
                     document.getElementById("admin-button-container").style.display = "block";
+                    document.getElementById("delete-button").style.display = "block";
+                    console.log("Esse user é admim")
                 }
             } else {
                 console.log("Usuário não encontrado no banco de dados");
