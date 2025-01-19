@@ -102,7 +102,7 @@ function loadVideosFromFirebase() {
         for (let videoId in videos) {
             const video = videos[videoId];
             const videoButton = document.createElement('button');
-            videoButton.innerText = `Assistir: ${video.name}`;
+            videoButton.innerText = `Assistir: ${video.name} - ${video.time}`;
             videoButton.setAttribute('data-video-id', videoId);
 
             // Adicionar o evento diretamente no JS, sem o onclick no HTML
