@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/uicons-solid-rounded/css/uicons-solid-rounded.css">
     <link rel="stylesheet" href="../css/maisExercicios.css">
     <link rel="shortcut icon" href="../imagens/Design_sem_nome__18_-removebg-preview.ico" />
+    
+    <!-- Firebase -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.6.1/firebase-storage.js"></script>
+    
     <style>
         /* Estilo do Modal */
         .modal {
@@ -54,33 +61,33 @@
         }
 
         #video-container {
-    display: flex;
-    flex-wrap: wrap;  /* Permite que os itens se movam para a próxima linha quando não houver espaço suficiente */
-    gap: 10px;        /* Espaço entre os itens */
-}
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
 
-.video-button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: calc(30% - 10px); /* Cada botão ocupa 1/3 da largura do container (menos o espaçamento) */
-    box-sizing: border-box;     /* Inclui o padding e margin no cálculo do tamanho */
-    margin-top: 10px;
-    margin-left: 25px;
-}
+        .video-button {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: calc(30% - 10px);
+            box-sizing: border-box;
+            margin-top: 10px;
+            margin-left: 25px;
+        }
 
-.video-button button {
-    padding: 8px 10px;
-    background-color: #f1f1f1;
-    border: 1px solid #ccc;
-    cursor: pointer;
-    border-radius: 5px;
-    width: 100%; /* Faz o botão ocupar toda a largura da div */
-}
+        .video-button button {
+            padding: 8px 10px;
+            background-color: #f1f1f1;
+            border: 1px solid #ccc;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
 
-.video-button button:hover {
-    background-color: #ddd;
-}
+        .video-button button:hover {
+            background-color: #ddd;
+        }
 
         .delete-button {
             background-color: red;
@@ -89,6 +96,7 @@
             cursor: pointer;
             padding: 5px 10px;
         }
+        
     </style>
 </head>
 <body>
@@ -97,8 +105,8 @@
     </div>
 
     <div class="exercicio">
-        <!-- Botão para abrir o modal de adicionar vídeo -->
-        <button id="admin-button-container" style="display: none;">&#43;</button>
+        <!-- Botão para abrir o modal de adicionar vídeo (exibido apenas para administradores) -->
+        <button id="admin-button-container" style="display: none;" >&#43;</button>
         
         <!-- Div onde os vídeos serão adicionados -->
         <div id="video-container">
@@ -109,19 +117,19 @@
     <!-- O Modal para adicionar vídeo -->
     <div id="myModal" class="modal">
         <div class="modal-content">
-            <span class="close">&times;</span>
+            <span class="close" id="closeButtonModal">&times;</span>
             <h2>Adicionar Música</h2>
             <form id="musicForm">
                 <label for="musicName">Nome da Música:</label>
                 <input type="text" id="musicName" name="musicName" required><br><br>
-
+            
                 <label for="musicTime">Tempo da Música:</label>
                 <input type="text" id="musicTime" name="musicTime" required><br><br>
-
-                <label for="musicLink">Link do YouTube:</label>
-                <input type="url" id="musicLink" name="musicLink" required><br><br>
-
-                <button type="submit">Adicionar Música</button>
+            
+                <label for="musicLink">Link do Vídeo:</label>
+                <input type="url" id="musicLink" name="musicLink" placeholder="Cole o link do vídeo" required><br><br>
+            
+                <button type="submit">Adicionar Vídeo</button>
             </form>
         </div>
     </div>
@@ -129,125 +137,15 @@
     <!-- O Modal para exibir o vídeo -->
     <div id="videoModal" class="modal">
         <div class="modal-content">
-            <span class="close" onclick="closeVideoModal()">&times;</span>
+            <span class="close" id="closeButtonModalVideo">&times;</span>
             <h2>Assistir Música</h2>
             <div id="video-container-modal">
-                <!-- O vídeo será carregado aqui -->
+                <!-- O vídeo será inserido aqui -->
             </div>
-            <button id="delete-button" class="delete-button" onclick="deleteVideo()  " style="display: none" ;>Excluir Vídeo</button>
+            <button id="delete-button" class="delete-button" onclick="deleteVideo()" style="display: none;">Excluir Vídeo</button>
         </div>
     </div>
-
-    <script type="module" src="../js/maisExercicios.js"></script>
-    <script>
-        var modal = document.getElementById("myModal");
-        var videoModal = document.getElementById("videoModal");
-        var btn = document.getElementById("admin-button-container");
-        var span = document.getElementsByClassName("close")[0];
-
-        var currentVideoLink = null;  // Variável para armazenar o link do vídeo atual
-        var currentVideoButton = null;  // Variável para armazenar o botão do vídeo atual
-
-        // Função para abrir o modal de adicionar vídeo
-        function openAddVideoModal() {
-            modal.style.display = "block";
-            document.body.style.overflow = "hidden";
-        }
-
-        btn.onclick = openAddVideoModal;
-        span.onclick = function() {
-            modal.style.display = "none";
-            document.body.style.overflow = "auto";
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-                document.body.style.overflow = "auto";
-            }
-        }
-
-        // Função para abrir o modal de exibir vídeo
-        function openVideoModal(videoLink, button) {
-            currentVideoLink = videoLink;  // Armazena o link do vídeo atual
-            currentVideoButton = button;  // Armazena o botão correspondente ao vídeo
-            videoModal.style.display = "block";
-            const videoContainer = document.getElementById("video-container-modal");
-            videoContainer.innerHTML = `<iframe width="560" height="315" src="${videoLink}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
-        }
-
-        function closeVideoModal() {
-            videoModal.style.display = "none";
-            const videoContainer = document.getElementById("video-container-modal");
-            videoContainer.innerHTML = ""; // Limpa o conteúdo
-        }
-
-        // Adicionar vídeo ao localStorage
-        function addVideoToLocalStorage(name, time, link) {
-            let videos = JSON.parse(localStorage.getItem('videos')) || [];
-            videos.push({ name, time, link });
-            localStorage.setItem('videos', JSON.stringify(videos));
-        }
-
-        // Remover vídeo do localStorage
-        function removeVideoFromLocalStorage(link) {
-            let videos = JSON.parse(localStorage.getItem('videos')) || [];
-            videos = videos.filter(video => video.link !== link); // Filtra o vídeo que será removido
-            localStorage.setItem('videos', JSON.stringify(videos));
-        }
-
-        // Carregar vídeos do localStorage
-        function loadVideosFromLocalStorage() {
-            let videos = JSON.parse(localStorage.getItem('videos')) || [];
-            videos.forEach(video => {
-                addVideoToContainer(video.name, video.time, video.link);
-            });
-        }
-
-        // Função para adicionar o vídeo no contêiner
-        function addVideoToContainer(name, time, link) {
-            const newButton = document.createElement('div');
-            newButton.classList.add('video-button');
-            newButton.innerHTML = `
-                <button onclick="openVideoModal('${link}', this)">${name} - ${time}</button>
-            `;
-            document.getElementById('video-container').appendChild(newButton);
-        }
-
-        // Função para excluir o vídeo dentro do modal
-        function deleteVideo() {
-            // Remove o vídeo da interface (botão específico)
-            currentVideoButton.parentElement.remove(); // Remove o botão de vídeo
-
-            // Remove o vídeo do localStorage
-            removeVideoFromLocalStorage(currentVideoLink);
-            
-            // Fecha o modal
-            closeVideoModal();
-        }
-
-        // Adicionar vídeo ao contêiner e localStorage
-        function addVideo(name, time, link) {
-            addVideoToContainer(name, time, link);
-            addVideoToLocalStorage(name, time, link);
-        }
-
-        // Carregar vídeos ao carregar a página
-        loadVideosFromLocalStorage();
-
-        // Formulário para adicionar vídeo
-        document.getElementById("musicForm").onsubmit = function(event) {
-            event.preventDefault(); 
-
-            const musicName = document.getElementById("musicName").value;
-            const musicTime = document.getElementById("musicTime").value;
-            const musicLink = document.getElementById("musicLink").value;
-
-            addVideo(musicName, musicTime, musicLink);
-
-            modal.style.display = "none";
-            document.getElementById("musicForm").reset(); // Reseta o formulário
-        }
-    </script>
+    
+    <script type="module" src="../js/maisExercicios.js" defer></script>
 </body>
 </html>
