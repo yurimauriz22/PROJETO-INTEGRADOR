@@ -12,7 +12,6 @@
 
         .botaovideos {
             position:relative;
-            text-decoration: none;
             display: block;
             font-size: 80%;
             background: rgb(163,163,163);
@@ -28,6 +27,12 @@
             text-align: center;
             text-decoration: none;
         }
+
+        .botaovideos1 {
+            text-decoration: none;
+            color: #fff;
+        }
+
 
         .modal-content {
             position: relative;
