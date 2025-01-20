@@ -12,11 +12,21 @@
 
         .botaovideos {
             position:relative;
+            text-decoration: none;
+            display: block;
+            font-size: 80%;
+            background: rgb(163,163,163);
+            background: linear-gradient(94deg, rgba(163,163,163,1) 27%, rgba(101,101,101,1) 72%);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
             top: 600px;
-            width: 10%;
+            left: 615px;
+            width: 15%;
             height: 30px;
-            border-radius: 5px;
+            border-color:gray;
+            border: 100px;
+            border-radius: 10px;
             text-align: center;
+            text-decoration: none;
         }
 
         .modal-content {
