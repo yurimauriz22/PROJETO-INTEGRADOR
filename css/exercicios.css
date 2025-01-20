@@ -14,8 +14,7 @@
             position:relative;
             display: block;
             font-size: 80%;
-            background: rgb(163,163,163);
-            background: linear-gradient(94deg, rgba(163,163,163,1) 27%, rgba(101,101,101,1) 72%);
+            background-color: rgb(200, 104, 252);
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             top: 600px;
             left: 615px;
