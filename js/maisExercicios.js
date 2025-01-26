@@ -19,7 +19,6 @@ const app = initializeApp(firebaseConfig);
 // Obtém a instância do auth
 const auth = getAuth(app);
 const database = getDatabase(app);
-
 const videoModal = document.getElementById("videoModal");
 const musicForm = document.getElementById("musicForm");
 const videoContainer = document.getElementById("video-container");
@@ -157,7 +156,6 @@ musicForm.addEventListener('submit', (e) => {
     const musicName = document.getElementById('musicName').value;
     const musicTime = document.getElementById('musicTime').value;
     const musicLink = document.getElementById('musicLink').value;
-
     const newVideo = {
         name: musicName,
         time: musicTime,
